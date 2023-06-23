@@ -3,27 +3,35 @@ services:
   devops:
     image: rahamshaik/devopsreponit:latest
     ports:
-      - "90:80"
+      - "80:80"
+    volumes:
+      - "devopsvol"
     deploy:
       replicas: 3
 
   aws:
     image: rahamshaik/awsreponit:latest
     ports:
-      - "91:80"
+      - "81:80"
+    volumes:
+      - "awsvol"
     deploy:
       replicas: 3
 
   datascience:
     image: rahamshaik/datasciencereponit:latest
     ports:
-      - "92:80"
+      - "82:80"
+    volumes:
+      - "datasciencevol"
     deploy:
       replicas: 3
 
   azure:
     image: rahamshaik/azurereponit:latest
     ports:
-      - "93:80"
+      - "83:80"
+    volumes:
+      - "azurevol"
     deploy:
       replicas: 3
